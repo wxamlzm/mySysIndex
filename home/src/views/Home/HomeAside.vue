@@ -6,17 +6,17 @@
             text-color="#fff"
             active-text-color="#ffd04b">
             <!-- 一级菜单 -->
-            <el-submenu index="item.id" v-for="(item) in menuList" :key="item.id">
+            <el-submenu :index="item.id.toString()" v-for="(item) in menuList" :key="item.id">
                 <!-- 一级菜单的模板区域 -->
                 <template slot="title">
                     <i class="el-icon-location"></i>
                     <span>{{item.authName}}</span>
                 </template>
                 <!-- 二级菜单项 -->
-                <el-menu-item index="itm.id" v-for="(itm) in JSON.parse(item.children)" :key="itm.id">
+                <el-menu-item :index="subItem.id.toString()" v-for="(subItem) in JSON.parse(item.children)" :key="subItem.id">
                     <template slot="title">
                         <i class="el-icon-location"></i>
-                        <span>{{itm.authName}}</span>
+                        <span>{{subItem.authName}}</span>
                     </template>
                 </el-menu-item>
             </el-submenu>
@@ -33,7 +33,6 @@ export default {
             subMenuList: {}
         }
     },
-    props: ['list'],
     methods: {
         async getMenuList(){
             const {data: res} = await this.$axios.get('/')

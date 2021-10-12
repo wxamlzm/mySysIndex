@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/add', async (req, res) => {
-    console.log(req.body)
     const menu = await Menu.findOne({id: req.body.id})
     if(menu){ return res.status(409).send('表单已存在')}
     const newMenu = await new Menu(req.body).save()
