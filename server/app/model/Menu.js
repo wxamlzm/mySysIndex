@@ -5,7 +5,7 @@ const MenuSchema = new Schema({
     id: { type: Number, require: true },
     authName: { type: String, require: true },
     path: { type: String, require: true },
-    children: { type: Array, require: true }
+    children: { type: String, require: true }  // json格式
 })
 
 const Menu = model('Menu', MenuSchema)

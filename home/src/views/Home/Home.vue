@@ -29,9 +29,20 @@
 import HomeAside from './HomeAside.vue'
 export default {
   name: 'Home',
+  data(){
+    return{
+      
+    }
+  },
   components: {
     HomeAside
   },
+  methods: {
+
+  },
+  created(){
+    
+  }
 
 }
 </script>

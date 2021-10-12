@@ -1,9 +1,12 @@
 const express = require('express')
+const cors = require('cors')
 const mongo = require('./config/db')
 const routes = require('./router')
 const app = new express()
 
 app.use(express.urlencoded({extended:false}))
+
+app.use(cors())
 
 mongo(app)
 
