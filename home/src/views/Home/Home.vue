@@ -17,7 +17,9 @@
       <!-- 侧边栏区域结束 -->
 
       <!-- 内容区域开始 -->
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
       <!-- 内容区域结束 -->
     </el-container>
     <!-- 主体区域结束 -->
